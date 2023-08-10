@@ -1,15 +1,28 @@
+class Student:
+   def __init__(self, name , house):
+    #  self.name = name
+    #  self.house = house
+
+
 def main():
   student = get_students()
+  print(f"{student.name} from {student.house}")
   # if student[0] == "Padma":
   #   student[1] = "Ravenclaw"
   # print(f"{student[0]} from {student[1]}")
-  print(f"{student['name']} from {student['house']}")
 
 def get_students():
-  student = {}
-  student["name"] = input("Name: ")
-  student["house"] = input("House: ")
+  name = input("Name: ")
+  house = input("House ")
+  student = Student(name, house)
+  # student = Student()
+  # student.name = input("Name: ")
+  # student.house = input("House ")
   return student
+  # student = {}
+  # student["name"] = input("Name: ")
+  # student["house"] = input("House: ")
+  # return student
 # def get_name():
 #   return input("Name: ")
 
