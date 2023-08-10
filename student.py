@@ -1,10 +1,10 @@
 class Student:
     def __init__(self, name, house):
-        if not name:
-            # print("Missing name")
-            raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff","Ravenclaw","Slytherin"]:
-            raise ValueError("Invalid house")
+        # if not name:
+        #     # print("Missing name")
+        #     raise ValueError("Missing name")
+        # if house not in ["Gryffindor", "Hufflepuff","Ravenclaw","Slytherin"]:
+        #     raise ValueError("Invalid house")
         self.name = name
         self.house = house
         # self.patonus = patronus
@@ -12,6 +12,23 @@ class Student:
     def __str__(self):
       return f"{self.name} from {self.house}"
     
+#Getter
+    # @property
+    def house(self):
+      return self._house
+    
+    # @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing name")
+        
+#Setter 
+    # @house.setter
+    def house(self, house):
+        if house not in ["Gryffindor", "Hufflepuff","Ravenclaw","Slytherin"]:
+            raise ValueError("Invalid house")
+        self._house = house
+        
     # def charm(self):
     #     match self.patronus:
     #         case "Stag":
@@ -23,9 +40,9 @@ class Student:
     #         case _:
     #             return ""
 
-
 def main():
     student = get_students()
+    student._house = "Number Four , Private Drive"
     print(student)
     # print("Expecto Patronum!")
     # print(student.charm())
@@ -38,8 +55,8 @@ def main():
 def get_students():
     name = input("Name: ")
     house = input("House ")
-    patronus = input("Patronus: ")
-    return Student(name, house,patronus)
+    # patronus = input("Patronus: ")
+    return Student(name, house)
     
     # student = Student()
     # student.name = input("Name: ")
