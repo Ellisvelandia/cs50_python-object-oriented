@@ -8,10 +8,14 @@ class Student:
         self.name = name
         self.house = house
 
+    def __str__(self):
+      return f"{self.name} from {self.house}"
+
 
 def main():
     student = get_students()
-    print(f"{student.name} from {student.house}")
+    print(student)
+    # print(f"{student.name} from {student.house}")
     # if student[0] == "Padma":
     #   student[1] = "Ravenclaw"
     # print(f"{student[0]} from {student[1]}")
